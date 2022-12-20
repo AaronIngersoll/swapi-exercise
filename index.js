@@ -23,7 +23,6 @@ function findSWPlanets(req, res, next) {
 
 async function getChars(url) {
 	const baseUrl = `${url}/?format=json&page=`;
-	console.log("baseUrl", baseUrl);
 	let page = 1;
 	let people = [];
 	let lastResult = [];
@@ -37,6 +36,7 @@ async function getChars(url) {
 				people.push({ name, height, films });
 			});
 			page++;
+			console.log("page", page);
 		} catch (err) {
 			// console.error(`Oops, something is wrong @${url} ${err}`);
 		}
